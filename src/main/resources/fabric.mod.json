@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "sg-compass",
+	"version": "${version}",
+	"name": "SG Compass",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/sg-compass/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.sg.compass.SGCompass"
+		],
+		"client": [
+			"com.sg.compass.SGCompassClient"
+		]
+	},
+	"mixins": [
+		"sg-compass.mixins.json",
+		{
+			"config": "sg-compass.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.10",
+		"minecraft": "~1.21.4",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
