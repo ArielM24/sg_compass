@@ -1,4 +1,4 @@
-<img src="src/main/resources/assets/sg_compass/sg_compass_icon.png" width="128">
+<img src="src/main/resources/assets/sg-compass/sg_compass_icon.png" width="128">
 
 # Synchro Games Compass Coordinates
 A simple mod to display the player coordinates when a compass is in it's inventory.
