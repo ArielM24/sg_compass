@@ -41,7 +41,7 @@ public class SGCompassClient implements ClientModInitializer {
 		int facing = Math.round(degrees / 45);
 		List<String> direction = Arrays.asList("S", "SW", "W", "NW", "N", "NE", "E", "SE", "S");
 		if (hasCompass) {
-			ctx.drawText(renderer, String.format("%s %s", direction.get(facing), pos.toShortString()), 10, 200,
+			ctx.drawText(renderer, String.format("%s %s", direction.get(facing), pos.toShortString()), 10, 10,
 					0xFFFFFFFF, false);
 		}
 	}
