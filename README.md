@@ -9,12 +9,12 @@ This mod is only compatible with fabric loaders
 
 ### Compatibility
 
-Minecraft 1.21.4
+Minecraft 1.21.5
 
 ### Requirements
 
 Java 21
-Fabric >=0.16.9
+Fabric >=0.16.10
 
 ### Issues
 
