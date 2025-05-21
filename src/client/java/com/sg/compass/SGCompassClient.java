@@ -40,8 +40,15 @@ public class SGCompassClient implements ClientModInitializer {
 		}
 		int facing = Math.round(degrees / 45);
 		List<String> direction = Arrays.asList("S", "SW", "W", "NW", "N", "NE", "E", "SE", "S");
+		
 		if (hasCompass) {
-			ctx.drawText(renderer, String.format("%s %s", direction.get(facing), pos.toShortString()), 10, 10,
+			String displayFacing = direction.get(facing);
+			String displayCoords = pos.toShortString();
+			String displayBiome = client.world.getBiome(pos).getIdAsString().replaceAll("minecraft:", "").replaceAll("_", " ");
+
+			ctx.drawText(renderer, String.format("%s %s", displayFacing, displayCoords), 10, 10,
+					0xFFFFFFFF, false);
+			ctx.drawText(renderer, String.format("%s", displayBiome), 10, 20,
 					0xFFFFFFFF, false);
 		}
 	}
