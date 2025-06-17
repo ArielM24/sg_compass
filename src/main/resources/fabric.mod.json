@@ -3,9 +3,9 @@
 	"id": "sg-compass",
 	"version": "${version}",
 	"name": "SG Compass",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "A simple mod to display the player coordinates when a compass is in it's inventory.",
 	"authors": [
-		"Me!"
+		"ArielM24"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
@@ -30,10 +30,10 @@
 		}
 	],
 	"depends": {
-		"fabricloader": ">=0.16.10",
-		"minecraft": "~1.21.5",
+		"fabricloader": ">=0.16.4",
+		"minecraft": "~1.21.6",
 		"java": ">=21",
-		"fabric-api": ">=0.119.5+1.21.5"
+		"fabric-api": ">=0.127.0+1.21.6"
 	},
 	"suggests": {
 		"another-mod": "*"

@@ -4,8 +4,9 @@ import java.util.Arrays;
 import java.util.List;
 
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.rendering.v1.HudLayerRegistrationCallback;
-import net.fabricmc.fabric.api.client.rendering.v1.IdentifiedLayer;
+
+import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.hud.VanillaHudElements;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawContext;
@@ -21,8 +22,8 @@ public class SGCompassClient implements ClientModInitializer {
 	private static final Identifier HUD_LAYER = Identifier.of(SGCompass.MOD_ID, "compass-layer");
 	@Override
 	public void onInitializeClient() {
-		HudLayerRegistrationCallback.EVENT.register(layeredDrawer -> layeredDrawer.attachLayerBefore(IdentifiedLayer.HOTBAR_AND_BARS, HUD_LAYER, SGCompassClient::render));
-		
+		//HudLayerRegistrationCallback.EVENT.register(layeredDrawer -> layeredDrawer.attachLayerBefore(IdentifiedLayer.HOTBAR_AND_BARS, HUD_LAYER, SGCompassClient::render));
+		HudElementRegistry.attachElementBefore(VanillaHudElements.HOTBAR, HUD_LAYER, SGCompassClient::render);
 	}
 
 	private static void render(DrawContext ctx, RenderTickCounter tickCounter) {
@@ -48,7 +49,7 @@ public class SGCompassClient implements ClientModInitializer {
 
 			ctx.drawText(renderer, String.format("%s %s", displayFacing, displayCoords), 10, 10,
 					0xFFFFFFFF, false);
-			ctx.drawText(renderer, String.format("%s", displayBiome), 10, 20,
+			ctx.drawText(renderer, String.format("%s%s", displayBiome.substring(0, 1).toUpperCase(), displayBiome.substring(1)), 10, 20,
 					0xFFFFFFFF, false);
 		}
 	}
